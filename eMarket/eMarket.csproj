@@ -51,6 +51,14 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="GelirGider.cs" />
+    <Compile Include="Market.cs" />
+    <Compile Include="Odeme.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sepet.cs" />
+    <Compile Include="Siparis.cs" />
     <Compile Include="Kategori.cs" />
     <Compile Include="Marka.cs" />
     <Compile Include="Model.cs" />
