@@ -51,12 +51,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-
     <Compile Include="GelirGider.cs" />
     <Compile Include="Market.cs" />
     <Compile Include="Odeme.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sepet.cs" />
     <Compile Include="Siparis.cs" />
     <Compile Include="Kategori.cs" />
@@ -67,6 +64,11 @@
     <Compile Include="Urun.cs" />
     <Compile Include="Uye.cs" />
     <Compile Include="VeriTabani.cs" />
+    <Compile Include="Personel.cs" />
+    <Compile Include="Musteri.cs" />
+    <Compile Include="Kisi.cs" />
+    <Compile Include="Iletisim.cs" />
+    <Compile Include="Adres.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

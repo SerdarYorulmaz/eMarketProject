@@ -1,0 +1,10 @@
+C:\Users\Asus\Desktop\eMarketProject\eMarket\obj\Debug\eMarket.Form1.resources
+C:\Users\Asus\Desktop\eMarketProject\eMarket\obj\Debug\eMarket.Properties.Resources.resources
+C:\Users\Asus\Desktop\eMarketProject\eMarket\obj\Debug\eMarket.csproj.GenerateResource.Cache
+C:\Users\Asus\Desktop\eMarketProject\eMarket\obj\Debug\eMarket.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\eMarketProject\eMarket\bin\Debug\eMarket.exe.config
+C:\Users\Asus\Desktop\eMarketProject\eMarket\bin\Debug\eMarket.exe
+C:\Users\Asus\Desktop\eMarketProject\eMarket\bin\Debug\eMarket.pdb
+C:\Users\Asus\Desktop\eMarketProject\eMarket\obj\Debug\eMarket.csprojResolveAssemblyReference.cache
+C:\Users\Asus\Desktop\eMarketProject\eMarket\obj\Debug\eMarket.exe
+C:\Users\Asus\Desktop\eMarketProject\eMarket\obj\Debug\eMarket.pdb
