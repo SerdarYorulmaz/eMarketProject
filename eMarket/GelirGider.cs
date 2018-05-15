@@ -6,20 +6,37 @@ using System.Threading.Tasks;
 
 namespace eMarket
 {
-    class GelirGider
+    public class GelirGider
     {
-        public decimal Kar { get; set; }
-        private decimal gelir { get; set; }
-        private decimal maliyet { get; set; }
+        private decimal kar { get; set; }
+        public decimal Gelir { get; set; }
+        public decimal Maliyet { get; set; }
+
+        private static GelirGider gelirGider;
+
+        private GelirGider()
+        {
+
+        }
 
         public decimal KarHesapla()
         {
-            return this.gelir - this.maliyet;
+            kar = Gelir - Maliyet;
+            return kar;
         }
 
-        public void HesapGuncelle(object urun)//todo
+        public static GelirGider HesapGetir()
         {
+            lock (gelirGider)
+            {
+                if (gelirGider == null)
+                {
+                    gelirGider = new GelirGider();
 
+                }
+
+                return gelirGider;
+            }
         }
 
     }

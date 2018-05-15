@@ -8,35 +8,48 @@ namespace eMarket
 {
     public class Sepet
     {
-        public Odeme odeme;
+        public eOdemeTipi odemeTipi { get; set;}
         public List<Siparis> SiparisListesi { get; set; }
+        public Decimal ToplamTutar { get; set;}
+
+       public enum eOdemeTipi
+        {
+            KREDI_KARTI_ODEME,
+            KAPIDA_ODEME
+        }
 
         public Sepet()
         {
-                    this.SiparisListesi = new List<Siparis>();
+            SiparisListesi = new List<Siparis>();
+            ToplamTutar = 0;
 
         }
         public void SiparisEkle(Siparis siparis)
         {
-            this.SiparisListesi.Add(siparis);
+            SiparisListesi.Add(siparis);
+            ToplamTutar += siparis.Urun.Fiyat * siparis.Adet;
 
         }
         public void SiparisSil(Siparis siparis)
         {
-            this.SiparisListesi.Remove(siparis);
+            SiparisListesi.Remove(siparis);
         }
         public void SiparisGuncelle(Siparis siparis)
         {
-            foreach (Siparis arananSiparis in this.SiparisListesi)
+            foreach (Siparis _siparis in SiparisListesi)
             {
-                if (arananSiparis.SiparisID == siparis.SiparisID)
+                if (siparis.SiparisID == _siparis.SiparisID)
                 {
-                    arananSiparis.Urun = siparis.Urun;
-                    arananSiparis.UrunSayisi = siparis.UrunSayisi;
-                    arananSiparis.VerilisTarihi = siparis.VerilisTarihi;
+                    SiparisListesi.Remove(_siparis);
+                    SiparisListesi.Add(siparis);
                 }
                     
             }
+        }
+
+        public void IndirimHesapla()
+        {
+            // Çeşitli günlerde indirim yapıldığı varsayılıyor...
         }
     }
 }

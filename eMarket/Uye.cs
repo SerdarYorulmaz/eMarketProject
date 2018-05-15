@@ -6,14 +6,57 @@ using System.Threading.Tasks;
 
 namespace eMarket
 {
-    class Uye // TODO:  --> :Musteri
+    class Uye: Musteri
     {
         public DateTime KayıtTarihi { get; set; }
-        public List<Object> YapilanSiparisler { get; set; } //TODO: object --> Siparis
+        public List<Siparis> YapilanSiparisler{ get; set; }
 
         public Uye()
         {
-            YapilanSiparisler = new List<object>(); //TODO: object --> Siparis
+            YapilanSiparisler = new List<Siparis>();
+        }
+
+        
+
+        public override bool SiparisVer(Sepet sepet)
+        {
+            if (base.SiparisVer(sepet))
+            {
+                foreach (Siparis siparis in sepet.SiparisListesi)
+                {
+                    YapilanSiparisler.Add(siparis);
+                }
+                return true;
+            }
+
+            return false;
+        }
+
+        public override void SiparisIptalEt(Siparis siparis)
+        {
+            base.SiparisIptalEt(siparis);
+
+            foreach (Siparis _siparis in YapilanSiparisler)
+            {
+                if (siparis.SiparisID == _siparis.SiparisID)
+                    YapilanSiparisler.Remove(siparis);
+            }
+        }
+
+        public bool SiparisGuncelle(Siparis siparis)
+        {
+            foreach (Siparis _siparis in YapilanSiparisler)
+            {
+                if (siparis.SiparisID == _siparis.SiparisID)
+                {
+                    YapilanSiparisler.Remove(_siparis);
+                    YapilanSiparisler.Add(siparis);
+
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public bool YorumYap(Urun urun, string uyeYorum)
@@ -22,8 +65,8 @@ namespace eMarket
             {
                 urun.Yorum += Environment.NewLine
                              + Environment.NewLine
-                             + ""// Adi
-                             + " "// Soyadi
+                             + Ad
+                             + " "+ Soyad
                              + Environment.NewLine
                              + uyeYorum;
                 return true;

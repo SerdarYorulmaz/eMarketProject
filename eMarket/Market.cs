@@ -9,29 +9,187 @@ namespace eMarket
     class Market
     {
         public string Ad { get; set; }
-        public List<object> UyeListesi { get; set; }//todo
-        public List<object> PersonelListesi { get; set; }//todo
-        public List<object> MusteriListesi { get; set; }//todo
+        public Iletisim Iletisim { get; set; }
+        public List<Uye> UyeListesi { get; set; }
+        public List<Personel> PersonelListesi { get; set; }
+        public List<Kategori> KategoriListesi { get; set; }
+        public VeriTabani veriTabani;
+        public GelirGider gelirGider;
 
         public Market()
         {
-            this.UyeListesi = new List<object>();
-            this.PersonelListesi = new List<object>();
-            this.MusteriListesi = new List<object>();
+            Iletisim = new Iletisim();
+            UyeListesi = new List<Uye>();
+            PersonelListesi = new List<Personel>();
+            KategoriListesi = new List<Kategori>();
         }
 
-        public void UyeEkle(object uye)//todo
+        public bool UyeEkle(Uye uye)
         {
-            this.UyeListesi.Add(uye);
+            foreach (Uye _uye in UyeListesi)
+            {
+                if (uye.ID == _uye.ID)
+                    return false;
+            }
+
+            UyeListesi.Add(uye);
+            return true;
         }
-        public void MusteriEkle(object musteri)//todo
+
+        public void UyeSil(Uye uye)
         {
-            this.MusteriListesi.Add(musteri);
+            foreach (Uye _uye in UyeListesi)
+            {
+                if (uye.ID == _uye.ID)
+                {
+                    UyeListesi.Remove(_uye);
+                }
+            }
         }
-        public void PersonelEkle(object personel)//todo
+
+        public void UyeGuncelle(Uye uye)
         {
-            this.PersonelListesi.Add(personel);
+            foreach (Uye _uye in UyeListesi)
+            {
+                if (uye.ID == _uye.ID)
+                {
+                    UyeListesi.Remove(_uye);
+                    UyeListesi.Add(uye);
+                }
+            }
         }
+
+        public bool PersonelEkle(Personel personel)
+        {
+            foreach (Personel _personel in PersonelListesi)
+            {
+                if (personel.ID == _personel.ID)
+                    return false;
+            }
+
+            PersonelListesi.Add(personel);
+            return true;
+        }
+
+        public void PersonelSil(Personel personel)
+        {
+            foreach (Personel _personel in PersonelListesi)
+            {
+                if (personel.ID == _personel.ID)
+                {
+                    PersonelListesi.Remove(_personel);
+                }
+            }
+        }
+
+        public void PersonelGuncelle(Personel personel)
+        {
+            foreach (Personel _personel in PersonelListesi)
+            {
+                if (personel.ID == _personel.ID)
+                {
+                    PersonelListesi.Remove(_personel);
+                    PersonelListesi.Add(personel);
+                }
+            }
+        }
+
+        public bool KategoriEkle(Kategori kategori)
+        {
+            foreach (Kategori _kategori in KategoriListesi)
+            {
+                if (kategori.Adi.Equals(_kategori.Adi))
+                    return false;
+                    
+            }
+
+            KategoriListesi.Add(kategori);
+            return true;
+        }
+
+        public void KategoriSil(Kategori kategori)
+        {
+            foreach (Kategori _kategori in KategoriListesi)
+            {
+                if (kategori.Adi.Equals(_kategori.Adi))
+                    KategoriListesi.Remove(kategori);
+
+            }
+        }
+
+        public bool KategoriGüncelle(Kategori kategori)
+        {
+            foreach (Kategori _kategori in KategoriListesi)
+            {
+                if (kategori.Adi.Equals(_kategori.Adi))
+                {
+                    KategoriListesi.Remove(_kategori);
+                    KategoriListesi.Add(kategori);
+
+                    return true;
+                }
+                    
+            }
+
+            return false;
+        }
+
+        public bool UrunEkle(Urun urun, Marka marka)
+        {
+            return marka.UrunEkle(urun);
+        }
+
+        public bool UrunSil(Urun urun, Marka marka)
+        {
+            return marka.UrunSil(urun);
+        }
+
+
+        public bool UrunGuncelle(Urun urun, Marka marka)
+        {
+            return marka.UrunGuncelle(urun);
+        }
+
+        public List<Urun> BelirliFiyatIleAra(Kategori kategori, Decimal fiyat)
+        {
+            List<Urun> bulunanUrunler = new List<Urun>();
+
+            foreach (Kategori _kategori in KategoriListesi)
+            {
+                foreach (Marka _marka in _kategori.Markalar)
+                {
+                    foreach (Urun urun in _marka.Urunller)
+                    {
+                        if (urun.Fiyat <= fiyat)
+                        {
+                            bulunanUrunler.Add(urun);
+                        }
+                    }
+
+                    foreach (Model model in _marka.Modeller)
+                    {
+                        if (model.Fiyat <= fiyat)
+                        {
+                            bulunanUrunler.Add(model);
+                        }
+                    }
+                }
+            }
+
+            return bulunanUrunler;
+        }
+
+        public void FiyataGoreArtanListele(Kategori kategori, uint Adet)
+        {
+            //TODO with heap ...
+        }
+
+        public void GenelUrunArama(string arananUrun)
+        {
+            //TODO with tree
+        }
+
+
 
     }
 }

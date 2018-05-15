@@ -9,14 +9,14 @@ namespace eMarket
     public class VeriTabani
     {
         public string Adi { get; set; }
-        private VeriTabani veriTabani;
+        private static VeriTabani veriTabani;
 
         private VeriTabani()
         {
             //Todo : Veri bağlantısı veya ilgili kayıt işlemleri.
         }
 
-        public VeriTabani VeriTabaniGetir()
+        public static VeriTabani VeriTabaniGetir()
         {
             lock (veriTabani)
             {

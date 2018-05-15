@@ -9,39 +9,56 @@ namespace eMarket
    public class Musteri:Kisi
     {
         public uint ID { get; set; }
-
-
-        //TODO: SEPET EKLEDİGİNDE GUNCELENECEK!! public Sepet Sepet  { get; set; }
+        public KrediKarti KrediKarti { get; set; }
+        public Sepet Sepet  { get; set; }
 
         public Musteri()
         {
-            //--->Sepet=new Sepet();
+            Sepet = new Sepet();
+            KrediKarti = new KrediKarti();
+        }
+        
+
+        public virtual bool SiparisVer(Sepet sepet)
+        {
+            if(sepet.odemeTipi == Sepet.eOdemeTipi.KREDI_KARTI_ODEME)
+            {
+                if (KrediKarti.ParaCek(sepet.ToplamTutar))
+                {
+                    SiparisiTamamla(sepet);
+
+                    return true;
+                }
+            }
+            else if (sepet.odemeTipi == Sepet.eOdemeTipi.KAPIDA_ODEME)
+            {
+                SiparisiTamamla(sepet);
+            }
+
+            return false;
+            
         }
 
+        private void SiparisiTamamla(Sepet sepet)
+        {
+            foreach (Siparis siparis in sepet.SiparisListesi)
+            {
+                siparis.Urun.Stok -= siparis.Adet;
+            }
 
-        public void SiparisVer()
-        {
-            //TODO:GEREKLİ İSLEMLER VARSA PARAMETRE
-        }
-
-        public void SiparisIptalEt()
-        {
-            //TODO:GEREKLİ İSLEMLER VARSA PARAMETRE
-        }
-        public void SiparisGuncelle()
-        {
-            //TODO:GEREKLİ İSLEMLER VARSA PARAMETRE
+            // Kapıda ödemenin gerçekleştiği varsayılıyor.
+            GelirGider.HesapGetir().Gelir += sepet.ToplamTutar;
         }
 
-        public void BilgiGuncelle()
+        public virtual void SiparisIptalEt(Siparis siparis)
         {
-            //TODO:GEREKLİ İSLEMLER VARSA PARAMETRE
+            siparis.Urun.Stok += siparis.Adet;
+            GelirGider.HesapGetir().Gelir -= siparis.Urun.Fiyat * siparis.Adet;
+
+            //Bankaya iade işlemi için istek yapıldı varsayılıyor...
+
         }
 
-        public void Kaydol()
-        {
-            //TODO:GEREKLİ İSLEMLER VARSA PARAMETRE
-        }
 
 
     }

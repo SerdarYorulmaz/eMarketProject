@@ -9,7 +9,7 @@ namespace eMarket
   public  class Personel:Kisi
     {
         public string Departman { get; set; }
-        public int PersonelID { get; set; }
+        public int ID { get; set; }
         public DateTime IseBaslangicTrh { get; set; }
         public Decimal Maas { get; set; }
          

@@ -9,9 +9,14 @@ namespace eMarket
     public class Siparis
     {
         public DateTime VerilisTarihi { get; set; }
-        public object Urun { get; set; } //todo
-        public int UrunSayisi { get; set; }
-        public int SiparisID { get; set; }
+        public Urun Urun { get; set; } 
+        public uint Adet { get; set; }
+        public uint SiparisID { get; set; }
+
+        public Siparis()
+        {
+            Urun = new Urun();
+        }
 
     }
 }
