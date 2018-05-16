@@ -16,5 +16,21 @@ namespace eMarket
         {
             InitializeComponent();
         }
+
+        private void btnPerGiris_Click(object sender, EventArgs e)
+        {
+            FormPersonel formPersonel = new FormPersonel();
+            this.Hide();
+            formPersonel.Show();
+            
+        }
+
+        private void btnUyeGiris_Click(object sender, EventArgs e)
+        {
+            FormUye formUye = new FormUye();
+            this.Hide();
+            formUye.Show();
+            
+        }
     }
 }

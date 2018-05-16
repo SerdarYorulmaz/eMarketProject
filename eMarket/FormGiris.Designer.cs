@@ -28,37 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabGiris = new System.Windows.Forms.TabControl();
             this.tabPersonelGiris = new System.Windows.Forms.TabPage();
-            this.tabUyeGiris = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.tabUyeGiris = new System.Windows.Forms.TabPage();
+            this.btnUyeGiris = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.tabControl1.SuspendLayout();
+            this.btnPerGiris = new System.Windows.Forms.Button();
+            this.tabGiris.SuspendLayout();
             this.tabPersonelGiris.SuspendLayout();
             this.tabUyeGiris.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabGiris
             // 
-            this.tabControl1.Controls.Add(this.tabPersonelGiris);
-            this.tabControl1.Controls.Add(this.tabUyeGiris);
-            this.tabControl1.Location = new System.Drawing.Point(161, 135);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(368, 251);
-            this.tabControl1.TabIndex = 0;
+            this.tabGiris.Controls.Add(this.tabPersonelGiris);
+            this.tabGiris.Controls.Add(this.tabUyeGiris);
+            this.tabGiris.Location = new System.Drawing.Point(161, 135);
+            this.tabGiris.Name = "tabGiris";
+            this.tabGiris.SelectedIndex = 0;
+            this.tabGiris.Size = new System.Drawing.Size(368, 251);
+            this.tabGiris.TabIndex = 0;
             // 
             // tabPersonelGiris
             // 
-            this.tabPersonelGiris.Controls.Add(this.button1);
+            this.tabPersonelGiris.Controls.Add(this.btnPerGiris);
             this.tabPersonelGiris.Controls.Add(this.label2);
             this.tabPersonelGiris.Controls.Add(this.label1);
             this.tabPersonelGiris.Controls.Add(this.textBox2);
@@ -70,30 +70,6 @@
             this.tabPersonelGiris.TabIndex = 0;
             this.tabPersonelGiris.Text = "Personel Girişi";
             this.tabPersonelGiris.UseVisualStyleBackColor = true;
-            // 
-            // tabUyeGiris
-            // 
-            this.tabUyeGiris.Controls.Add(this.button2);
-            this.tabUyeGiris.Controls.Add(this.label3);
-            this.tabUyeGiris.Controls.Add(this.label4);
-            this.tabUyeGiris.Controls.Add(this.textBox3);
-            this.tabUyeGiris.Controls.Add(this.textBox4);
-            this.tabUyeGiris.Location = new System.Drawing.Point(4, 25);
-            this.tabUyeGiris.Name = "tabUyeGiris";
-            this.tabUyeGiris.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUyeGiris.Size = new System.Drawing.Size(360, 222);
-            this.tabUyeGiris.TabIndex = 1;
-            this.tabUyeGiris.Text = "Üye Girişi";
-            this.tabUyeGiris.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(238, 139);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Giriş";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -128,14 +104,30 @@
             this.textBox1.Size = new System.Drawing.Size(158, 22);
             this.textBox1.TabIndex = 4;
             // 
-            // button2
+            // tabUyeGiris
             // 
-            this.button2.Location = new System.Drawing.Point(238, 139);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 28);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Giriş";
-            this.button2.UseVisualStyleBackColor = true;
+            this.tabUyeGiris.Controls.Add(this.btnUyeGiris);
+            this.tabUyeGiris.Controls.Add(this.label3);
+            this.tabUyeGiris.Controls.Add(this.label4);
+            this.tabUyeGiris.Controls.Add(this.textBox3);
+            this.tabUyeGiris.Controls.Add(this.textBox4);
+            this.tabUyeGiris.Location = new System.Drawing.Point(4, 25);
+            this.tabUyeGiris.Name = "tabUyeGiris";
+            this.tabUyeGiris.Padding = new System.Windows.Forms.Padding(3);
+            this.tabUyeGiris.Size = new System.Drawing.Size(360, 222);
+            this.tabUyeGiris.TabIndex = 1;
+            this.tabUyeGiris.Text = "Üye Girişi";
+            this.tabUyeGiris.UseVisualStyleBackColor = true;
+            // 
+            // btnUyeGiris
+            // 
+            this.btnUyeGiris.Location = new System.Drawing.Point(238, 139);
+            this.btnUyeGiris.Name = "btnUyeGiris";
+            this.btnUyeGiris.Size = new System.Drawing.Size(75, 28);
+            this.btnUyeGiris.TabIndex = 12;
+            this.btnUyeGiris.Text = "Giriş";
+            this.btnUyeGiris.UseVisualStyleBackColor = true;
+            this.btnUyeGiris.Click += new System.EventHandler(this.btnUyeGiris_Click);
             // 
             // label3
             // 
@@ -170,15 +162,25 @@
             this.textBox4.Size = new System.Drawing.Size(158, 22);
             this.textBox4.TabIndex = 9;
             // 
+            // btnPerGiris
+            // 
+            this.btnPerGiris.Location = new System.Drawing.Point(238, 139);
+            this.btnPerGiris.Name = "btnPerGiris";
+            this.btnPerGiris.Size = new System.Drawing.Size(75, 28);
+            this.btnPerGiris.TabIndex = 13;
+            this.btnPerGiris.Text = "Giriş";
+            this.btnPerGiris.UseVisualStyleBackColor = true;
+            this.btnPerGiris.Click += new System.EventHandler(this.btnPerGiris_Click);
+            // 
             // FormGiris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 482);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabGiris);
             this.Name = "FormGiris";
             this.Text = "FormGiris";
-            this.tabControl1.ResumeLayout(false);
+            this.tabGiris.ResumeLayout(false);
             this.tabPersonelGiris.ResumeLayout(false);
             this.tabPersonelGiris.PerformLayout();
             this.tabUyeGiris.ResumeLayout(false);
@@ -189,18 +191,18 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabGiris;
         private System.Windows.Forms.TabPage tabPersonelGiris;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TabPage tabUyeGiris;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnUyeGiris;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button btnPerGiris;
     }
 }
