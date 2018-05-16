@@ -10,3 +10,14 @@ C:\Users\Asus\Desktop\eMarketProject\eMarket\obj\Debug\eMarket.pdb
 C:\Users\Asus\Desktop\eMarketProject\eMarket\obj\Debug\eMarket.FormGiris.resources
 C:\Users\Asus\Desktop\eMarketProject\eMarket\obj\Debug\eMarket.FormPersonel.resources
 C:\Users\Asus\Desktop\eMarketProject\eMarket\obj\Debug\eMarket.FormUye.resources
+C:\Users\sekom12\Desktop\E-marketim\eMarket\bin\Debug\eMarket.exe.config
+C:\Users\sekom12\Desktop\E-marketim\eMarket\obj\Debug\eMarket.exe
+C:\Users\sekom12\Desktop\E-marketim\eMarket\obj\Debug\eMarket.pdb
+C:\Users\sekom12\Desktop\E-marketim\eMarket\bin\Debug\eMarket.exe
+C:\Users\sekom12\Desktop\E-marketim\eMarket\bin\Debug\eMarket.pdb
+C:\Users\sekom12\Desktop\E-marketim\eMarket\obj\Debug\eMarket.csprojResolveAssemblyReference.cache
+C:\Users\sekom12\Desktop\E-marketim\eMarket\obj\Debug\eMarket.FormGiris.resources
+C:\Users\sekom12\Desktop\E-marketim\eMarket\obj\Debug\eMarket.FormPersonel.resources
+C:\Users\sekom12\Desktop\E-marketim\eMarket\obj\Debug\eMarket.FormUye.resources
+C:\Users\sekom12\Desktop\E-marketim\eMarket\obj\Debug\eMarket.Properties.Resources.resources
+C:\Users\sekom12\Desktop\E-marketim\eMarket\obj\Debug\eMarket.csproj.GenerateResource.Cache
